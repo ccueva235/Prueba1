@@ -61,10 +61,18 @@ app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Facade v1")
 
 
 app.UseCors(options =>
+        options.WithOrigins("https://ccueva235.github.io")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+);
+
+/*
+ app.UseCors(options =>
         options.AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader()
 );
+*/
 
 app.UseHttpsRedirection();
 
